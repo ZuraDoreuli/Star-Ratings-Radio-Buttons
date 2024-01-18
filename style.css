@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #ddd;
+}
+label {
+  width: 50px;
+  height: 50px;
+  margin-left: 8px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: #929292;
+}
+.stars:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+.stars:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+}
+.stars > input:not(:checked) + label:hover,
+.stars > input:not(:checked) + label:hover ~ label,
+.stars > input:checked + label:hover,
+.stars > input:checked + label:hover ~label,
+.stars > input:checked ~ label:hover,
+.stars >input:checked ~ label:hover ~ label,
+.stars > label:hover ~ input:checked ~ label {
+  background-color: #d6cf6d;
+}
+.stars > input:checked ~ label {
+  background-color: #d6c802;
+}
